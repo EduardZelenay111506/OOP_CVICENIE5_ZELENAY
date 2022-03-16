@@ -2,23 +2,17 @@ package sk.stuba.fei.uim.oop;
 
 import sk.stuba.fei.uim.oop.zvierata.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Main {
     public static void main(String[] args) {
+        List<Zviera> zveri = new ArrayList<>(List.of(new Pes("Dunco"),new Macka("Murko"),
 
-        List<String> auta = new ArrayList<>();
-        auta.add("Volvo");
-        auta.add("BMW");
-        auta.add("VW");
-        auta.add("Audi");
-
-        auta.forEach(s ->{
-            if (Objects.equals(s, "BMW")){
-                System.out.println("Auto ktore nema smerovky");
-            }
-        });
-
+            new Pes("Luna"), new Macka("Garfield")));
+        System.out.println(zveri);
+        zveri.sort(null);
+        System.out.println(zveri);
     }
-
 }
