@@ -6,27 +6,19 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<Zviera> zveri = new ArrayList<>(List.of(new Pes("Dunco"),new Macka("Murko")));
 
-        Set<String> auta = new HashSet<>();
+        List<String> auta = new ArrayList<>();
         auta.add("Volvo");
         auta.add("BMW");
         auta.add("VW");
         auta.add("Audi");
-        auta.add("Volvo");
-        auta.add("BMW");
 
-        System.out.println(auta);
-        System.out.println(auta.size());
+        auta.forEach(s ->{
+            if (Objects.equals(s, "BMW")){
+                System.out.println("Auto ktore nema smerovky");
+            }
+        });
 
-        if (auta.contains("Volvo")){
-            auta.remove("Volvo");
-        }
-        List<String> auta2 = new ArrayList<>(List.of("Volvo","BMW"));
-
-        auta.removeAll(auta2);
-        System.out.println(auta);
-        auta.clear();
-        }
+    }
 
 }
