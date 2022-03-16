@@ -3,6 +3,7 @@ package sk.stuba.fei.uim.oop;
 import sk.stuba.fei.uim.oop.zvierata.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -12,7 +13,12 @@ public class Main {
 
             new Pes("Luna"), new Macka("Garfield")));
         System.out.println(zveri);
-        zveri.sort(null);
+        zveri.sort(new ZvieraComparator());
+        System.out.println(zveri);
+
+        zveri.sort((o1, o2) -> -o1.getMeno().compareTo(o2.getMeno()));
+        System.out.println(zveri);
+        zveri.sort(Comparator.comparing(Zviera::getMeno));
         System.out.println(zveri);
     }
 }
